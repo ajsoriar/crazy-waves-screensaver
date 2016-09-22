@@ -63,10 +63,7 @@
      rect.size.width = width; rect.size.height = height;
      return rect;
      }
-     
-     */
-    
-    /*
+
      rect.origin.x = 500;
      rect.origin.y = 500;
      rect.size = NSMakeSize( tamanyo_x , tamanyo_y );
