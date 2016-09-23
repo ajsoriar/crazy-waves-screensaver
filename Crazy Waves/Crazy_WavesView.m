@@ -2,7 +2,7 @@
 //  Crazy_WavesView.m
 //  Crazy Waves
 //
-//  Created by The man with no name on 23/09/2016.
+//  Created by ajsoriar on 23/09/2016.
 //  Copyright © 2016 ajsoriar. All rights reserved.
 //
 
@@ -36,89 +36,50 @@
 
 - (void)animateOneFrame
 {
-    int ancho = 5;
+    //int ancho = 5;
     
     NSBezierPath *path;
     NSRect rect;
     NSSize size;
     NSColor *color;
-    float red, green, blue, alpha;
+    float red, green, blue, alpha, radio, origin_x, origin_y, tamanyo_y, tamanyo_x, alpha_step;
     
     size = [self bounds].size;
-    
-    // Calculate random width and height: rect.size = NSMakeSize( size.width, size.height );
-    //rect.size = NSMakeSize( SSRandomFloatBetween( size.width / 1.0, size.width / 10.0 ), SSRandomFloatBetween( size.height / 1.0, size.height / 10.0 ));
-    
-    float tamanyo_y, tamanyo_x = SSRandomFloatBetween( size.width / 5, size.width / 30.0 );
-    tamanyo_y = tamanyo_x;
-    
-    //SSRandomFloatBetween( size.height / 1.0, size.height / 10.0 )
-    
-    /*
-     
-     CGRectMake(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
-     {
-     CGRect rect;
-     rect.origin.x = x; rect.origin.y = y;
-     rect.size.width = width; rect.size.height = height;
-     return rect;
-     }
-
-
-     rect.origin.x = 500;
-     rect.origin.y = 500;
-     rect.size = NSMakeSize( tamanyo_x , tamanyo_y );
-     */
-    float radio = tamanyo_x / 2;
-    float origin_x = SSRandomFloatBetween( -radio, size.width - radio );
-    float origin_y = SSRandomFloatBetween( -radio, size.height - radio );
-    
-    rect = NSMakeRect(origin_x, origin_y, tamanyo_x, tamanyo_y);
-    
-    path = [NSBezierPath bezierPathWithOvalInRect:rect];
     path.lineWidth = 2;
-    //path = [NSBezierPath bezierPathWithRect:rect];
     
-    path.lineWidth = ancho + 2; //4;
-    
-    [ [NSColor colorWithCalibratedRed:0 green:0 blue: 0 alpha:1.0] setStroke];
-    
-    [path stroke];
-    
-    
-    path.lineWidth = ancho; //2;
-    
-    //[greenColor set];
-    
-    // Calculate a random color
+    radio = SSRandomFloatBetween( 50, 500 );
+    origin_x = SSRandomFloatBetween( -radio, size.width );
+    origin_y = SSRandomFloatBetween( -radio, size.height );
+    tamanyo_x = radio * 2; //SSRandomFloatBetween( size.width / 5, size.width / 30.0 );
+    tamanyo_y = tamanyo_x; 
+
+    // Base colors
     red = SSRandomFloatBetween( 0.0, 255.0 ) / 255.0;
     green = SSRandomFloatBetween( 0.0, 255.0 ) / 255.0;
     blue = SSRandomFloatBetween( 0.0, 255.0 ) / 255.0;
-    alpha = 1; //SSRandomFloatBetween( 0.0, 255.0 ) / 255.0;
-    color = [NSColor colorWithCalibratedRed:red green:green blue:blue alpha:alpha];
+    alpha = 1;
     
-    
-    [color set];
+    // Paint circles
+    alpha_step = 1/radio;
+    for (int i = 0; i < radio; i++)
+    {
+        alpha = alpha - alpha_step;
+        color = [NSColor colorWithCalibratedRed:red green:green blue:blue alpha:alpha];
+        [color set];
+        rect = NSMakeRect(origin_x - i, origin_y - i, i*2, i*2);
+        path = [NSBezierPath bezierPathWithOvalInRect:rect];
+        [path stroke];
+    }
     
     // draw
     
     /*
-     if (SSRandomIntBetween( 0, 1 ) == 0)
+    if (SSRandomIntBetween( 0, 1 ) == 0)
      [path fill];
-     else
+    else
      [path stroke];
-     */
-    
-    [path stroke];
-    
-    /*
-     color = [NSColor colorWithCalibratedRed:255.0 green:0.0 blue:0 alpha:255.0];
-     [color set];
-     
-     //[path fill];
-     [path stroke];
-     */
-    
+    */
+ 
     return;
 }
 
