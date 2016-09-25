@@ -7,11 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		062811B91D9C027B00EA82A4 /* thumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = 062811B71D9C027B00EA82A4 /* thumbnail.png */; };
+		062811BA1D9C027B00EA82A4 /* thumbnail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 062811B81D9C027B00EA82A4 /* thumbnail@2x.png */; };
 		0643C6561D949C2D0078FFA4 /* Crazy_WavesView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0643C6551D949C2D0078FFA4 /* Crazy_WavesView.h */; };
 		0643C6581D949C2D0078FFA4 /* Crazy_WavesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0643C6571D949C2D0078FFA4 /* Crazy_WavesView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		062811B71D9C027B00EA82A4 /* thumbnail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumbnail.png; sourceTree = "<group>"; };
+		062811B81D9C027B00EA82A4 /* thumbnail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thumbnail@2x.png"; sourceTree = "<group>"; };
 		0643C6521D949C2D0078FFA4 /* Crazy Waves.saver */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Crazy Waves.saver"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0643C6551D949C2D0078FFA4 /* Crazy_WavesView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Crazy_WavesView.h; sourceTree = "<group>"; };
 		0643C6571D949C2D0078FFA4 /* Crazy_WavesView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Crazy_WavesView.m; sourceTree = "<group>"; };
@@ -48,6 +52,8 @@
 		0643C6541D949C2D0078FFA4 /* Crazy Waves */ = {
 			isa = PBXGroup;
 			children = (
+				062811B71D9C027B00EA82A4 /* thumbnail.png */,
+				062811B81D9C027B00EA82A4 /* thumbnail@2x.png */,
 				0643C6551D949C2D0078FFA4 /* Crazy_WavesView.h */,
 				0643C6571D949C2D0078FFA4 /* Crazy_WavesView.m */,
 				0643C6591D949C2D0078FFA4 /* Info.plist */,
@@ -123,6 +129,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				062811B91D9C027B00EA82A4 /* thumbnail.png in Resources */,
+				062811BA1D9C027B00EA82A4 /* thumbnail@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +272,7 @@
 				0643C65E1D949C2D0078FFA4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
